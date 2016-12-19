@@ -15,12 +15,14 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 import com.jf.fragment.*;
-public class MainActivity extends AppCompatActivity implements FantasyFragment.OnFragmentInteractionListener,
+public class MainActivity extends AppCompatActivity implements
+        FantasyFragment.OnFragmentInteractionListener,
         CartFragment.OnFragmentInteractionListener,
         MeFragment.OnFragmentInteractionListener,
         UpcomingFragment.OnFragmentInteractionListener,
         WinnersFragment.OnFragmentInteractionListener,
-        View.OnClickListener,RadioGroup.OnCheckedChangeListener {
+        View.OnClickListener,
+        RadioGroup.OnCheckedChangeListener {
 
     private boolean is_closed = false;
     private long mExitTime;
