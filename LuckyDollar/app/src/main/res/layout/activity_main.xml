@@ -54,7 +54,7 @@
             android:gravity="center|bottom"
             android:paddingBottom="5dp"
             android:paddingTop="5dp"
-            android:text="@string/hudong"
+            android:text="Fantasy"
             android:textColor="@drawable/textcolor"
             android:textSize="14sp" />
 
@@ -69,7 +69,7 @@
             android:gravity="center|bottom"
             android:paddingBottom="5dp"
             android:paddingTop="5dp"
-            android:text="@string/jieyue"
+            android:text="Upcoming"
             android:textColor="@drawable/textcolor"
             android:textSize="14sp" />
 
@@ -84,7 +84,7 @@
             android:gravity="center|bottom"
             android:paddingBottom="5dp"
             android:paddingTop="5dp"
-            android:text="@string/qiangzuo"
+            android:text="Winners"
             android:textColor="@drawable/textcolor"
             android:textSize="14sp" />
 
@@ -99,7 +99,7 @@
             android:gravity="center|bottom"
             android:paddingBottom="5dp"
             android:paddingTop="5dp"
-            android:text="@string/xinshengdaohang"
+            android:text="Cart"
             android:textColor="@drawable/textcolor"
             android:textSize="14sp" />
 
@@ -114,7 +114,7 @@
             android:gravity="center|bottom"
             android:paddingBottom="5dp"
             android:paddingTop="5dp"
-            android:text="@string/faxian"
+            android:text="Me"
             android:textColor="@drawable/textcolor"
             android:textSize="14sp" />
     </RadioGroup>

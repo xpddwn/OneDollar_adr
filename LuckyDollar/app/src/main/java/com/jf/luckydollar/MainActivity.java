@@ -59,23 +59,16 @@ public class MainActivity extends AppCompatActivity implements
                 .setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                 .commit();
     }
-
+    private long exitTime = 0;
     // 监听手机上的BACK键
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-            // 判断菜单是否关闭
-            if (is_closed) {
-                // 判断两次点击的时间间隔（默认设置为2秒）
-                if ((System.currentTimeMillis() - mExitTime) > 2000) {
-                    Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
-
-                    mExitTime = System.currentTimeMillis();
-                } else {
-                    finish();
-                    System.exit(0);
-                    super.onBackPressed();
-                }
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
+            if ((System.currentTimeMillis() - exitTime) > 2000) {
+                Toast.makeText(getApplicationContext(), "再按一次退出程序", Toast.LENGTH_SHORT).show();
+                exitTime = System.currentTimeMillis();
             } else {
+                finish();
+                System.exit(0);
             }
             return true;
         }

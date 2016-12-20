@@ -7,8 +7,17 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.GridView;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
 import com.jf.luckydollar.R;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,6 +27,7 @@ import com.jf.luckydollar.R;
  * Use the {@link FantasyFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
+
 public class FantasyFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,6 +39,17 @@ public class FantasyFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+
+    private  View view;
+    private GridView gview;
+    private ListView lview,livew1;
+    private List<Map<String, Object>> data_list;
+    private SimpleAdapter sim_adapter;
+    // 图片封装为一个数组
+
+    private int[] icon = { R.drawable.example, R.drawable.example,
+            R.drawable.example, R.drawable.example };
+    private String[] iconName = {  "日历", "照相机", "时钟", "游戏", };
 
     public FantasyFragment() {
         // Required empty public constructor
@@ -65,7 +86,32 @@ public class FantasyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fantasy, container, false);
+        view= inflater.inflate(R.layout.fragment_fantasy, container, false);
+        lview=(ListView)view.findViewById(R.id.recentWinners);
+        livew1=(ListView)view.findViewById(R.id.recentUpcoming);
+        gview = (GridView) view.findViewById(R.id.fantasygrid);
+        //新建List
+        data_list = new ArrayList<Map<String, Object>>();
+        //获取数据
+        getData();
+        //新建适配器
+        String [] from ={"image","text"};
+        int [] to = {R.id.image,R.id.text};
+        sim_adapter = new SimpleAdapter(getActivity(), data_list, R.layout.fantasygriditem, from, to);
+        //配置适配器
+        gview.setAdapter(sim_adapter);
+       // livew1.setAdapter(sim_adapter);
+        return  view;
+    }
+    public List<Map<String, Object>> getData(){
+        //cion和iconName的长度是相同的，这里任选其一都可以
+        for(int i=0;i<icon.length;i++){
+            Map<String, Object> map = new HashMap<String, Object>();
+            map.put("image", icon[i]);
+            map.put("text", iconName[i]);
+            data_list.add(map);
+        }
+        return data_list;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
