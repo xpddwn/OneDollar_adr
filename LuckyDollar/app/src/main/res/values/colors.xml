@@ -10,4 +10,9 @@
     <color name="transparent">#00000000</color>
     <color name="hongse">#CC0033</color>
     <color name="zone_title_bg">#ffee71a1</color>
+    <color name="black">#000000</color><!--黑色 -->
+    <color name="red">#FF0000</color><!--红色 -->
+    <color name="gray">#545454</color><!--灰色 -->
+    <color name="gray_light">#2F4F4F</color><!--浅灰色 -->
+    <color name="divider">#ffd2d2d2</color>
 </resources>
