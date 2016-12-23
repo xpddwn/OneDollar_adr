@@ -7,15 +7,14 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridView;
+import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import com.jf.luckydollar.MyApplication;
 import com.jf.luckydollar.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -31,13 +30,13 @@ public class WinnersFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
+    ListView lv_winner;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
 
-    private  View view;
     public WinnersFragment() {
         // Required empty public constructor
     }
@@ -67,21 +66,36 @@ public class WinnersFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view=inflater.inflate(R.layout.fragment_winners, container, false);
         // Inflate the layout for this fragment
-
-        view= inflater.inflate(R.layout.fragment_winners, container, false);
-
+        initView(view);
         return view;
     }
 
+    private void initView(View view){
+        lv_winner=(ListView)view.findViewById(R.id.winner_listview);
 
-
+        ArrayList<HashMap<String, Object>> listItem = new ArrayList<HashMap<String, Object>>();
+        for(int i=0;i<6;i++)
+        {
+            HashMap<String, Object> map = new HashMap<String, Object>();
+            map.put("winner_avatar", R.drawable.example);//图像资源的ID
+            map.put("winner_name", "Uesr "+i);
+            map.put("winner_date"," 2016-12- "+i);
+            map.put("winner_goods_name","["+i+"期][Coach]克罗斯比真皮迷你手提包！");
+            map.put("winner_comment",i+" 支持一元夺宝！我真是太幸运了！支持一元夺宝！我真是太幸运了！");
+            listItem.add(map);
+        }
+        SimpleAdapter sa=new SimpleAdapter(MyApplication.newInstance(),listItem,R.layout.item_winner,
+                new String[] {"winner_avatar","winner_name", "winner_date","winner_goods_name","winner_comment"},
+                new int[] {R.id.winner_avatar,R.id.winner_name,R.id.winner_date,R.id.winner_goods_name,R.id.winner_comment});
+        lv_winner.setAdapter(sa);
+    }
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
