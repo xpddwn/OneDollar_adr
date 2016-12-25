@@ -1,21 +1,33 @@
 package com.jf.fragment;
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Message;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.GridView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
+import com.jf.luckydollar.MainActivity;
+import com.jf.luckydollar.MerchandiseActivity;
 import com.jf.luckydollar.R;
-
+import android.os.Handler;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.LogRecord;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -39,8 +51,9 @@ public class UpcomingFragment extends Fragment {
 
     private  View view;
     private GridView gview;
-    private List<Map<String, Object>> data_list;
+    private List<Map<String, Object>> data;
     private SimpleAdapter sim_adapter;
+    private Handler handler;
     // 图片封装为一个数组
     private int[] icon = { R.drawable.example, R.drawable.example,
             R.drawable.example, R.drawable.example, R.drawable.example,
@@ -88,15 +101,44 @@ public class UpcomingFragment extends Fragment {
         view= inflater.inflate(R.layout.fragment_upcoming, container, false);
         gview = (GridView) view.findViewById(R.id.upcominggrid);
         //新建List
-        data_list = new ArrayList<Map<String, Object>>();
+        data = new ArrayList<Map<String, Object>>();
         //获取数据
         getData();
         //新建适配器
         String [] from ={"image","text"};
-        int [] to = {R.id.image,R.id.text};
-        sim_adapter = new SimpleAdapter(getActivity(), data_list, R.layout.comingitem, from, to);
+        int [] to = {R.id.upcoming_image,R.id.upcoming_introduce};
+        //sim_adapter = new SimpleAdapter(getActivity(), data, R.layout.upcoming_item, from, to);
         //配置适配器
-        gview.setAdapter(sim_adapter);
+        MyAdapter adapter = new MyAdapter(getActivity());
+        gview.setAdapter(adapter);
+        //
+        handler = new Handler() {
+            public void handleMessage(Message msg) {
+                if (msg.what == 0) {
+                    //0号事件为绑定数据
+                   // BindListData();
+                    Log.d("debug", "binddata");
+                } else if (msg.what == 1) {
+                    Intent intent = new Intent();
+                    ArrayList<String> infolist = new ArrayList<String>();
+//                    infolist.add(userid);
+//                    infolist.add(data.get(position).get("activity_id"));
+//                    infolist.add(data.get(position).get("place_name"));
+//                    infolist.add(data.get(position).get("begin_date"));
+//                    infolist.add(data.get(position).get("activity_name"));
+//                    infolist.add(data.get(position).get("status"));
+
+                    //设置Intent的class属性，跳转到SecondActivity
+                    intent.setClass(getActivity(), MerchandiseActivity.class);
+                    intent.putStringArrayListExtra("infolist", infolist);
+                    startActivity(intent);
+
+                }
+
+            }
+        };
+
+
         return view;
     }
 
@@ -106,10 +148,71 @@ public class UpcomingFragment extends Fragment {
             Map<String, Object> map = new HashMap<String, Object>();
             map.put("image", icon[i]);
             map.put("text", iconName[i]);
-            data_list.add(map);
+            data.add(map);
+        }
+        return data;
+    }
+    static class ViewHolder
+    {
+        public TextView upcoming_introduce,upcoming_winner,upcoming_luckynumber,upcoming_number,upcoming_time;
+        public LinearLayout upcoming_linearLayout;
+
+    }
+    public class MyAdapter extends BaseAdapter {
+        private LayoutInflater mInflater = null;
+        private MyAdapter(Context context){
+            this.mInflater = LayoutInflater.from(context);
+        }
+        @Override
+        public int getCount() {
+            return data.size();
         }
 
-        return data_list;
+        @Override
+        public Object getItem(int position) {
+            return data.get(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(final int position, View convertView, ViewGroup parent) {
+            ViewHolder holder = null;
+            if(convertView == null){
+                holder = new ViewHolder();
+                convertView = mInflater.inflate(R.layout.upcoming_item,null);
+                //映射 eg：holder.img = (ImagView)convertView.findViewById(R.id.img);
+                //holder.itemtablelayout = (TableLayout)convertView.findViewById(R.id.selcourse_tablelayout);
+                holder.upcoming_introduce = (TextView)convertView.findViewById(R.id.upcoming_introduce);
+                holder.upcoming_winner = (TextView)convertView.findViewById(R.id.upcoming_winner);
+                holder.upcoming_luckynumber = (TextView)convertView.findViewById(R.id.upcoming_luckynumber);
+
+                holder.upcoming_number = (TextView)convertView.findViewById(R.id.upcoming_number);
+                holder.upcoming_time = (TextView)convertView.findViewById(R.id.upcoming_time);
+                holder.upcoming_linearLayout = (LinearLayout)convertView.findViewById(R.id.upcoming_linearLayout);
+                convertView.setTag(holder);
+            }else{
+                holder = (ViewHolder)convertView.getTag();
+            }
+            holder.upcoming_introduce.setText((String)data.get(position).get("text"));
+
+            final int p = position;
+            holder.upcoming_linearLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Message msg = new Message();
+                    msg.what = 1;
+
+                    handler.sendMessage(msg);
+                }
+            });
+
+            return convertView;
+        }
     }
 
     // TODO: Rename method, update argument and hook method into UI event

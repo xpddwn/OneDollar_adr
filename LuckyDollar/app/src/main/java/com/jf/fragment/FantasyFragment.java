@@ -9,15 +9,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import com.jf.luckydollar.MyApplication;
 import com.jf.luckydollar.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.zip.Inflater;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -40,9 +43,10 @@ public class FantasyFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    private  View view;
+    private View view;
     private GridView gview;
-    private ListView lview,livew1;
+    private ListView lview;
+    private LinearLayout livew1,toplinear;
     private List<Map<String, Object>> data_list;
     private SimpleAdapter sim_adapter;
     // 图片封装为一个数组
@@ -88,9 +92,27 @@ public class FantasyFragment extends Fragment {
         // Inflate the layout for this fragment
         view= inflater.inflate(R.layout.fragment_fantasy, container, false);
         lview=(ListView)view.findViewById(R.id.recentWinners);
-        livew1=(ListView)view.findViewById(R.id.recentUpcoming);
+        livew1=(LinearLayout)view.findViewById(R.id.recentUpcoming);
         gview = (GridView) view.findViewById(R.id.fantasygrid);
-        //新建List
+        toplinear=(LinearLayout)view.findViewById(R.id.toplinear);
+        //配置ListView
+        ArrayList<HashMap<String, Object>> listItem = new ArrayList<HashMap<String, Object>>();
+        for(int i=1;i<4;i++)
+        {
+            HashMap<String, Object> map = new HashMap<String, Object>();
+            map.put("messagetext", "Jack win an Iphone6S");//图像资源的ID
+            listItem.add(map);
+        }
+        SimpleAdapter sa=new SimpleAdapter(getActivity(),listItem,R.layout.item_message,
+                new String[] {"messagetext"},
+                new int[] {R.id.messagetext});
+        lview.setAdapter(sa);
+        //配置HorizontalListView
+        View horview= inflater.inflate(R.layout.horizontal_list_item,container,false);
+
+        livew1.addView(horview);
+
+        //配置GridView
         data_list = new ArrayList<Map<String, Object>>();
         //获取数据
         getData();
