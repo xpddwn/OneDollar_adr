@@ -42,7 +42,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".Winner_detail"></activity>
+        <activity android:name=".MerchandiseActivity"></activity>
     </application>
 
 </manifest>

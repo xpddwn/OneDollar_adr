@@ -6,12 +6,12 @@
     android:gravity="center"
     android:padding="10dp"
     android:background="@drawable/textview_border"
+    android:id="@+id/upcoming_linearLayout"
     >
-
 
     <ImageView
         android:src="@drawable/example"
-        android:id="@+id/image"
+        android:id="@+id/upcoming_image"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:scaleType="fitCenter"
@@ -26,7 +26,7 @@
             android:text="简介:"
             />
         <TextView
-            android:id="@+id/text"
+            android:id="@+id/upcoming_introduce"
             android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -43,7 +43,7 @@
             android:text="获奖者:"
             />
         <TextView
-            android:id="@+id/text1"
+            android:id="@+id/upcoming_winner"
             android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -60,7 +60,7 @@
             android:text="幸运号"
             />
         <TextView
-            android:id="@+id/text2"
+            android:id="@+id/upcoming_luckynumber"
             android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -77,7 +77,7 @@
             android:text="本次参与:"
             />
         <TextView
-            android:id="@+id/text3"
+            android:id="@+id/upcoming_number"
             android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -100,7 +100,7 @@
             android:text="揭晓时间:"
             />
         <TextView
-            android:id="@+id/text4"
+            android:id="@+id/upcoming_time"
             android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
