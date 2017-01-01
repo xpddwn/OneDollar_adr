@@ -8,7 +8,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:id="@+id/toplinear">
         <ImageView
             android:src="@drawable/example"
             android:layout_width="match_parent"
@@ -50,14 +51,27 @@
                 android:text="+ MORE"/>
         </LinearLayout>
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ListView
-                android:id="@+id/recentUpcoming"
+            android:id="@+id/imgContent"
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_weight="10"
+            android:gravity="center_vertical"
+            android:orientation="vertical" >
+
+            <HorizontalScrollView
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:fastScrollEnabled="true"
-                android:layout_alignParentLeft="true" />
+                android:layout_weight="1"
+                android:layout_height="0dip"
+                android:background="#eee" >
+
+                <LinearLayout
+                    android:id="@+id/recentUpcoming"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal" >
+                </LinearLayout>
+            </HorizontalScrollView>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
