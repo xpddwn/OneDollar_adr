@@ -1,18 +1,25 @@
 package com.jf.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
+import com.jf.luckydollar.MerchandiseActivity;
 import com.jf.luckydollar.MyApplication;
 import com.jf.luckydollar.R;
 
@@ -42,10 +49,12 @@ public class FantasyFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
-
+    private Handler handler;
     private View view;
     private GridView gview;
     private ListView lview;
+    private TextView messagetext1,messagetext2,messagetext3;
+    private ImageView arrow1,arrow2,arrow3,image1,image2,image3;
     private LinearLayout livew1,toplinear;
     private List<Map<String, Object>> data_list;
     private SimpleAdapter sim_adapter;
@@ -91,26 +100,84 @@ public class FantasyFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view= inflater.inflate(R.layout.fragment_fantasy, container, false);
-        lview=(ListView)view.findViewById(R.id.recentWinners);
         livew1=(LinearLayout)view.findViewById(R.id.recentUpcoming);
         gview = (GridView) view.findViewById(R.id.fantasygrid);
         toplinear=(LinearLayout)view.findViewById(R.id.toplinear);
+        messagetext1=(TextView)view.findViewById(R.id.messagetext1);
+        messagetext2=(TextView)view.findViewById(R.id.messagetext2);
+        messagetext3=(TextView)view.findViewById(R.id.messagetext3);
+        messagetext1.setText("Jack win an Iphone 6S");
+        messagetext2.setText("Tom win a Mac Book Air");
+        messagetext3.setText("Lili win a Cup");
+        arrow1=(ImageView)view.findViewById(R.id.arrow1);
+        arrow2=(ImageView)view.findViewById(R.id.arrow2);
+        arrow3=(ImageView)view.findViewById(R.id.arrow3);
+        image1=(ImageView)view.findViewById(R.id.image1);
+        image2=(ImageView)view.findViewById(R.id.image2);
+        image3=(ImageView)view.findViewById(R.id.image3);
+        arrow1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Message msg = new Message();
+                msg.what = 1;
+                handler.sendMessage(msg);
+            }
+        });
+        arrow2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Message msg = new Message();
+                msg.what = 1;
+                handler.sendMessage(msg);
+            }
+        });
+        arrow3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Message msg = new Message();
+                msg.what = 1;
+                handler.sendMessage(msg);
+            }
+        });
+        image1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Message msg = new Message();
+                msg.what = 1;
+                handler.sendMessage(msg);
+            }
+        });
+        image2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Message msg = new Message();
+                msg.what = 1;
+                handler.sendMessage(msg);
+            }
+        });
+        image3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Message msg = new Message();
+                msg.what = 1;
+                handler.sendMessage(msg);
+            }
+        });
         //配置ListView
-        ArrayList<HashMap<String, Object>> listItem = new ArrayList<HashMap<String, Object>>();
-        for(int i=1;i<4;i++)
-        {
-            HashMap<String, Object> map = new HashMap<String, Object>();
-            map.put("messagetext", "Jack win an Iphone6S");//图像资源的ID
-            listItem.add(map);
-        }
-        SimpleAdapter sa=new SimpleAdapter(getActivity(),listItem,R.layout.item_message,
-                new String[] {"messagetext"},
-                new int[] {R.id.messagetext});
-        lview.setAdapter(sa);
-        //配置HorizontalListView
-        View horview= inflater.inflate(R.layout.horizontal_list_item,container,false);
+//        ArrayList<HashMap<String, Object>> listItem = new ArrayList<HashMap<String, Object>>();
+//        for(int i=1;i<4;i++)
+//        {
+//            HashMap<String, Object> map = new HashMap<String, Object>();
+//            map.put("messagetext", "Jack win an Iphone6S");//图像资源的ID
+//            listItem.add(map);
+//        }
+//        SimpleAdapter sa=new SimpleAdapter(getActivity(),listItem,R.layout.item_message,
+//                new String[] {"messagetext"},
+//                new int[] {R.id.messagetext});
+//        lview.setAdapter(sa);
 
-        livew1.addView(horview);
+
+
 
         //配置GridView
         data_list = new ArrayList<Map<String, Object>>();
@@ -122,7 +189,32 @@ public class FantasyFragment extends Fragment {
         sim_adapter = new SimpleAdapter(getActivity(), data_list, R.layout.fantasygriditem, from, to);
         //配置适配器
         gview.setAdapter(sim_adapter);
-       // livew1.setAdapter(sim_adapter);
+
+        handler = new Handler() {
+            public void handleMessage(Message msg) {
+                if (msg.what == 0) {
+                    //0号事件为绑定数据
+                    // BindListData();
+                    Log.d("debug", "binddata");
+                } else if (msg.what == 1) {
+                    Intent intent = new Intent();
+                    ArrayList<String> infolist = new ArrayList<String>();
+//                    infolist.add(userid);
+//                    infolist.add(data.get(position).get("activity_id"));
+//                    infolist.add(data.get(position).get("place_name"));
+//                    infolist.add(data.get(position).get("begin_date"));
+//                    infolist.add(data.get(position).get("activity_name"));
+//                    infolist.add(data.get(position).get("status"));
+
+                    //设置Intent的class属性，跳转到SecondActivity
+                    intent.setClass(getActivity(), MerchandiseActivity.class);
+                    intent.putStringArrayListExtra("infolist", infolist);
+                    startActivity(intent);
+
+                }
+
+            }
+        };
         return  view;
     }
     public List<Map<String, Object>> getData(){
