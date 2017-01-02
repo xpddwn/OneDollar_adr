@@ -1,20 +1,32 @@
 package com.jf.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.jf.luckydollar.MainActivity;
 import com.jf.luckydollar.MyApplication;
+import com.jf.luckydollar.PaymentActivity;
 import com.jf.luckydollar.R;
+import com.jf.luckydollar.Winner_detail;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -34,7 +46,10 @@ public class CartFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private ArrayList<HashMap<String,String>> data;
+    private static Handler handler=null;
     ListView lv_cart;
+    Button cart_check_bt;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -44,7 +59,7 @@ public class CartFragment extends Fragment {
     public CartFragment() {
         // Required empty public constructor
     }
-
+    final int GOODS_DATAIL=0;
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -78,7 +93,18 @@ public class CartFragment extends Fragment {
         View view= inflater.inflate(R.layout.fragment_cart, container, false);
         // Inflate the layout for this fragment
         initView(view);
+        handler = new Handler(){
+            public void handleMessage(Message msg){
+                if(msg.what==GOODS_DATAIL){
+//                    Intent intent = new Intent();
+//                    intent.setClass(getActivity(), Winner_detail.class);
+//                    startActivity(intent);
 
+                    Toast.makeText(getActivity(), "跳转商品详情", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        };
         return view;
     }
 
@@ -90,24 +116,115 @@ public class CartFragment extends Fragment {
     }
     private void initView(View view){
         lv_cart=(ListView)view.findViewById(R.id.cart_listview);
+        MyAdapter adapter = new MyAdapter(getActivity());
+        lv_cart.setAdapter(adapter);
+        cart_check_bt=(Button)view.findViewById(R.id.cart_check_bt);
+        cart_check_bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-        ArrayList<HashMap<String, Object>> listItem = new ArrayList<HashMap<String, Object>>();
-        for(int i=5;i<10;i++)
-        {
-            HashMap<String, Object> map = new HashMap<String, Object>();
-            map.put("goods_image", R.drawable.example);//图像资源的ID
-            map.put("goods_name", "Name "+i);
-            map.put("goods_left", i+" left ");
-            map.put("goods_total","Total "+i+" entitis");
-            map.put("good_want_buy","I want to buy");
-            listItem.add(map);
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), PaymentActivity.class);
+                startActivity(intent);
+            }
+        });
+//        ArrayList<HashMap<String, Object>> listItem = new ArrayList<HashMap<String, Object>>();
+//        for(int i=5;i<10;i++)
+//        {
+//            HashMap<String, Object> map = new HashMap<String, Object>();
+//            map.put("goods_image", R.drawable.example);//图像资源的ID
+//            map.put("goods_name", "Name "+i);
+//            map.put("goods_left", i+" left ");
+//            map.put("goods_total","Total "+i+" entitis");
+//            map.put("good_want_buy","I want to buy");
+//            listItem.add(map);
+//        }
+//
+//        SimpleAdapter sa=new SimpleAdapter(MyApplication.newInstance(),listItem,R.layout.item_cart,
+//                new String[] {"goods_image","goods_name", "goods_left","goods_total","good_want_buy"},
+//                new int[] {R.id.goods_image,R.id.goods_name,R.id.goods_left,R.id.goods_total,R.id.good_want_buy});
+//        lv_cart.setAdapter(sa);
+    }
+
+    static class ViewHolder
+    {
+        public ImageView goods_image;
+        public TextView goods_name,goods_left,goods_total,good_want_buy;
+        public RelativeLayout relativeLayout;
+
+    }
+
+    public class MyAdapter extends BaseAdapter {
+        private LayoutInflater mInflater = null;
+        private MyAdapter(Context context){
+            this.mInflater = LayoutInflater.from(context);
+        }
+        @Override
+//        public int getCount() {
+//            return data.size();
+//        }
+        public int getCount() {
+            return 5;
         }
 
-        SimpleAdapter sa=new SimpleAdapter(MyApplication.newInstance(),listItem,R.layout.item_cart,
-                new String[] {"goods_image","goods_name", "goods_left","goods_total","good_want_buy"},
-                new int[] {R.id.goods_image,R.id.goods_name,R.id.goods_left,R.id.goods_total,R.id.good_want_buy});
-        lv_cart.setAdapter(sa);
+        @Override
+        public Object getItem(int position) {
+            return data.get(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(final int position, View convertView, ViewGroup parent) {
+            ViewHolder holder = null;
+            if(convertView == null){
+                holder = new ViewHolder();
+                convertView = mInflater.inflate(R.layout.item_cart,null);
+                //映射 eg：holder.img = (ImagView)convertView.findViewById(R.id.img);
+                //holder.itemtablelayout = (TableLayout)convertView.findViewById(R.id.selcourse_tablelayout);
+                holder.goods_image = (ImageView) convertView.findViewById(R.id.goods_image);
+                holder.goods_name = (TextView)convertView.findViewById(R.id.goods_name);
+                holder.goods_left = (TextView)convertView.findViewById(R.id.goods_left);
+                holder.goods_total = (TextView)convertView.findViewById(R.id.goods_total);
+                holder.good_want_buy = (TextView)convertView.findViewById(R.id.good_want_buy);
+
+                holder.relativeLayout = (RelativeLayout)convertView.findViewById(R.id.whole_item_cart);
+                convertView.setTag(holder);
+            }else{
+                holder = (ViewHolder)convertView.getTag();
+            }
+            //赋值
+            //eg:holder.img.setText()
+            //Typeface iconfont = Typeface.createFromAsset(getAssets(),"iconfont/iconfont.ttf");
+            //holder.course_icon.setTypeface(iconfont);
+
+
+            Log.d("debug", "getview");
+            holder.goods_image.setImageResource(R.drawable.example);
+            holder.goods_name.setText("Coach Newest Edition,Plue you could check the adthenticty at counter");
+            holder.goods_left.setText("233 left");
+            holder.goods_total.setText("Total 666 entitis");
+            holder.good_want_buy.setText("3 ");
+            final int p = position;
+            holder.goods_image.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Message msg = new Message();
+                    msg.what = 0;
+                    Bundle bundle = new Bundle();
+//                    bundle.putString("courseid", data.get(p).get("kc_id"));  //往Bundle中存放数据
+//                    bundle.putInt("position",position);
+                    msg.setData(bundle);//mes利用Bundle传递数据
+                    handler.sendMessage(msg);
+                }
+            });
+            return convertView;
+        }
     }
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
