@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.jf.luckydollar.PaySuccessActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/relativeLayout3">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Congratulations,you have bought your numbers!"
+            android:textColor="@color/green"
+            android:id="@+id/pay_success_congratulation"
+            android:layout_marginTop="15dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please wait for the system's announcement!"
+            android:textColor="@color/black"
+            android:id="@+id/pay_success_wait"
+            android:layout_below="@+id/pay_success_congratulation"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"/>
+
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Continue"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_shape1"
+
+            android:id="@+id/pay_success_continue"
+            android:layout_marginTop="25dp"
+            android:layout_below="@+id/pay_success_wait"
+            android:gravity="center"
+            android:layout_toLeftOf="@+id/pay_success_txtHide" />
+
+        <TextView android:id="@+id/pay_success_txtHide"
+            android:layout_width="25dp"
+            android:layout_height="1dp"
+            android:layout_centerHorizontal="true" />
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="View Detail"
+            android:textColor="@color/button_color"
+            android:background="@drawable/btn_shape2"
+
+            android:padding="10dp"
+            android:id="@+id/pay_success_view"
+            android:layout_alignBottom="@+id/pay_success_continue"
+            android:layout_toRightOf="@+id/pay_success_txtHide" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="You have successfully bought 4 entries of 2 item"
+        android:id="@+id/pay_success_summary"
+        android:layout_below="@+id/relativeLayout3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        />
+    <View style="@style/bg_line"/>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pay_success_item_detail"
+        android:layout_below="@+id/pay_success_summary"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>
