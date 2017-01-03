@@ -44,8 +44,14 @@
         </activity>
         <activity android:name=".Winner_detail" />
         <activity android:name=".MerchandiseActivity" />
+<<<<<<< HEAD
         <activity android:name=".WinnersActivity" />
         <activity android:name=".SpecificsActivity"></activity>
+=======
+        <activity android:name=".PaymentActivity" />
+        <activity android:name=".PaySuccessActivity" />
+        <activity android:name=".PayFailActivity"></activity>
+>>>>>>> refs/remotes/origin/pr/1
     </application>
 
 </manifest>
