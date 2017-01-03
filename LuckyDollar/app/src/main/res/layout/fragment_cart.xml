@@ -2,25 +2,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.jf.fragment.CartFragment">
+    tools:context="com.jf.fragment.CartFragment"
+    android:background="@color/background">
 
     <!-- TODO: Update blank fragment layout -->
-
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="462dp"
+        android:fadeScrollbars="true"
+        android:id="@+id/cart_listview"
+        android:layout_gravity="center_horizontal|top"
+        android:background="@color/white"/>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="31dp"
+        android:layout_height="50dp"
         android:background="@color/white"
-        android:layout_gravity="center_horizontal|bottom">
+        android:layout_gravity="center_horizontal|bottom"
+        >
         <View
             android:layout_width="fill_parent"
-            android:layout_height="2dp"
-            android:background="#FF909090" />
+            android:layout_height="1px"
+            android:background="@color/background" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="My Total:"
             android:maxLines="1"
-            android:gravity="bottom"
+            android:gravity="center_vertical"
             android:id="@+id/cart_my_total"
             android:textSize="26dp"
             android:textColor="@color/black"/>
@@ -32,8 +40,8 @@
             android:text="1.00"
             android:id="@+id/cart_total_num"
             android:textSize="26dp"
-            android:textColor="@color/black"
-            android:gravity="bottom"
+            android:textColor="@color/button_color"
+            android:gravity="center_vertical"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/cart_my_total"
             android:layout_toEndOf="@+id/cart_my_total"
@@ -42,11 +50,11 @@
 
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="29dp"
+            android:layout_height="match_parent"
 
             android:text="Check out"
             android:id="@+id/cart_check_bt"
-            android:background="@color/red"
+            android:background="@color/button_color"
             android:textColor="@color/white"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
@@ -55,12 +63,7 @@
 
     </RelativeLayout>
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="469dp"
-        android:fadeScrollbars="true"
-        android:id="@+id/cart_listview"
-        android:layout_gravity="center_horizontal|top" />
+
 
 
 </FrameLayout>

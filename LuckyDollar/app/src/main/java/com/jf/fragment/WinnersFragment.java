@@ -166,7 +166,7 @@ public class WinnersFragment extends Fragment {
     static class ViewHolder
     {
         public ImageView winner_avatar;
-        public TextView winner_date,winner_goods_name,winner_comment,winner_name;
+        public TextView winner_date,winner_goods_name,winner_comment,winner_name,winner_goods_authenticity;
         public RelativeLayout relativeLayout;
 
     }
@@ -206,7 +206,7 @@ public class WinnersFragment extends Fragment {
                 holder.winner_goods_name = (TextView)convertView.findViewById(R.id.winner_goods_name);
                 holder.winner_comment = (TextView)convertView.findViewById(R.id.winner_comment);
                 holder.winner_name = (TextView)convertView.findViewById(R.id.winner_name);
-
+                holder.winner_goods_authenticity=(TextView)convertView.findViewById(R.id.winner_goods_authenticity);
                 holder.relativeLayout = (RelativeLayout)convertView.findViewById(R.id.winner_item_whole);
                 convertView.setTag(holder);
             }else{
@@ -221,8 +221,9 @@ public class WinnersFragment extends Fragment {
             Log.d("debug", "getview");
             holder.winner_avatar.setImageResource(R.drawable.example);
             holder.winner_date.setText("2016-12-12");
-            holder.winner_goods_name.setText("[第x期][Coach]克罗斯比真皮迷你手提包！");
-            holder.winner_comment.setText("支持一元夺宝！我真是太幸运了！支持一元夺宝！我真是太幸运了");
+            holder.winner_goods_name.setText("Apple watch 2nd gen Sport MLC62JA ROSE");
+            holder.winner_comment.setText("Coach Newest Edition, Plus you could check the authenticity at counter");
+            holder.winner_goods_authenticity.setText("Plus you could check the authenticity at ");
             holder.winner_name.setText("Uesr ");
             final int p = position;
             holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
