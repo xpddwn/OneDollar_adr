@@ -1,6 +1,7 @@
 package com.jf.luckydollar;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
@@ -25,16 +26,18 @@ public class PaymentActivity extends AppCompatActivity {
         handler = new Handler() {
             public void handleMessage(Message msg) {
                 if (msg.what == 0) {
-//                    Intent intent = new Intent();
-//                    intent.setClass(getActivity(), Winner_detail.class);
-//                    startActivity(intent);
+
                     if (flag == 1){
-                        Toast.makeText(PaymentActivity.this, "支付成功", Toast.LENGTH_SHORT).show();
-                        Log.d("debug", "支付成功");
+                        Intent intent = new Intent();
+                        intent.setClass(PaymentActivity.this, PaySuccessActivity.class);
+                        startActivity(intent);
+                        finish();
                     }
                     else{
-                        Toast.makeText(PaymentActivity.this, "支付失败", Toast.LENGTH_SHORT).show();
-                        Log.d("debug", "支付失败");
+                        Intent intent = new Intent();
+                        intent.setClass(PaymentActivity.this, PayFailActivity.class);
+                        startActivity(intent);
+                        finish();
                     }
 
                 }
