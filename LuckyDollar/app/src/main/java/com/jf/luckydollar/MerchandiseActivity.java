@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 public class MerchandiseActivity extends AppCompatActivity {
 
-    private static final String LOG_TAG = "MainActivity";
+    private static final String LOG_TAG = "MerchandiseActivity";
     private ImageHandler handler = new ImageHandler(new WeakReference<MerchandiseActivity>(this));
     private Handler myhandler;
     private ViewPager viewPager;

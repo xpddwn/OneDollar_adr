@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#f73859</color>
+    <color name="colorPrimaryDark">#f73859</color>
     <color name="colorAccent">#FF4081</color>
     <color name="splash_fense">#9966FF</color>
     <color name="chengse">#FF6600</color>
@@ -17,7 +17,7 @@
     <color name="gray">#545454</color><!--灰色 -->
     <color name="gray_light">#2F4F4F</color><!--浅灰色 -->
     <color name="divider">#ffd2d2d2</color>
-
+    <color name="textcolor">#108ae6</color>
 
     <color name="ivory">#fffff0</color> <!-- 象牙色 -->
     <color name="lightyellow">#ffffe0</color> <!-- 亮黄色 -->
@@ -77,7 +77,7 @@
     <color name="goldenrod">#daa520</color> <!-- 金麒麟色 -->
     <color name="orchid">#da70d6</color> <!-- 淡紫色 -->
     <color name="thistle">#d8bfd8</color> <!-- 蓟色 -->
-    <color name="lightgray">#d3d3d3</color> <!-- 亮灰色 -->
+    <color name="lightgray">#eeeeee</color> <!-- 亮灰色 -->
     <color name="lightgrey">#d3d3d3</color> <!-- 亮灰色 -->
     <color name="tan">#d2b48c</color> <!-- 茶色 -->
     <color name="chocolate">#d2691e</color> <!-- 巧可力色 -->
