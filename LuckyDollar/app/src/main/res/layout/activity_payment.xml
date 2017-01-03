@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.jf.luckydollar.PaymentActivity"
+    >
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/relativeLayout2">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total:"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:id="@+id/payment_total" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1.00"
+                android:textColor="@color/red"
+                android:textSize="18dp"
+                android:id="@+id/payment_amout"
+                android:layout_marginLeft="14dp"
+                android:layout_marginStart="14dp"
+                android:layout_alignTop="@+id/payment_total"
+                android:layout_toRightOf="@+id/payment_total"
+                android:layout_toEndOf="@+id/payment_total" />
+            <ImageView style="@style/img_arrow"
+                android:layout_marginRight="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/radiobutton_textview"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dip"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/payment_radio_group"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <RadioButton
+                    android:id="@+id/payment_radio_bt_1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip"
+                    android:button="@null"
+                    android:drawableRight="@android:drawable/btn_radio"
+                    android:text="My accont (Balance:10.00)"
+                    android:textSize="18dip" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:background="?android:attr/listDivider" />
+
+                <RadioButton
+                    android:id="@+id/payment_radio_bt_2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip"
+                    android:button="@null"
+                    android:drawableRight="@android:drawable/btn_radio"
+                    android:text="PayPal"
+                    android:textSize="18dip" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <Button
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape"
+            android:id="@+id/payment_confirmpay_bt"
+            android:text=" Confirm and pay "
+            android:layout_gravity="center_horizontal" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
