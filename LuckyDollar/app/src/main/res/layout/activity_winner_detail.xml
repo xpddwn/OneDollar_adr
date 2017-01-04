@@ -8,15 +8,15 @@
         android:layout_height="match_parent"
         android:id="@+id/relativeLayout">
         <com.jf.luckydollar.CircleImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:id="@+id/winner_detail_avatar"
             android:layout_marginLeft="10dp"
             android:layout_marginStart="10dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
 
             />
         <TextView
@@ -24,14 +24,11 @@
             android:layout_height="wrap_content"
             android:maxLines="1"
             android:text="Winner"
-
-            android:textSize="15dp"
             android:textColor="@color/gray"
-            android:layout_alignTop="@+id/winner_detail_avatar"
             android:layout_toRightOf="@+id/winner_detail_avatar"
-            android:layout_toEndOf="@+id/winner_detail_avatar"
-            android:layout_marginLeft="20dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
             android:id="@+id/textView" />
         <TextView
             android:layout_width="wrap_content"
@@ -40,10 +37,11 @@
             android:text="User name"
             android:textSize="18dp"
             android:id="@+id/winner_detail_name"
-            android:textColor="@color/red"
-            android:layout_alignBottom="@+id/winner_detail_avatar"
+            android:textColor="@color/button_color"
+            android:layout_below="@+id/textView"
             android:layout_alignLeft="@+id/textView"
-            android:layout_alignStart="@+id/textView" />
+            android:layout_alignStart="@+id/textView"
+            android:layout_marginTop="5dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -65,17 +63,20 @@
             android:layout_below="@+id/winner_detail_avatar"
             android:layout_alignLeft="@+id/winner_detail_avatar"
             android:layout_alignStart="@+id/winner_detail_avatar"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="18dp"
             android:id="@+id/textView2" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="【VOL.306】Fashion Women Handbag Shouder Bag Leather"
-            android:textSize="18dp"
+            android:textSize="15dp"
+            android:textColor="@color/black"
             android:id="@+id/winner_detail_product_name"
             android:layout_alignTop="@+id/textView2"
-            android:layout_toRightOf="@+id/winner_detail_avatar"
-            android:layout_toEndOf="@+id/winner_detail_avatar" />
+            android:layout_alignLeft="@+id/winner_detail_name"
+            android:layout_alignStart="@+id/winner_detail_name"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -94,7 +95,7 @@
             android:id="@+id/winner_detail_totalnum"
             android:text="88"
             android:textSize="15dp"
-            android:textColor="@color/red"
+            android:textColor="@color/button_color"
             android:layout_alignTop="@+id/textView3"
             android:layout_toRightOf="@+id/textView3"
             android:layout_toEndOf="@+id/textView3"
@@ -116,7 +117,7 @@
             android:text="12345678"
             android:textSize="15dp"
             android:id="@+id/winner_detail_winnnernum"
-            android:textColor="@color/red"
+            android:textColor="@color/button_color"
             android:layout_alignTop="@+id/textView4"
             android:layout_toRightOf="@+id/textView4"
             android:layout_toEndOf="@+id/textView4"
@@ -136,8 +137,8 @@
             android:layout_marginLeft="10dp"
             android:id="@+id/winner_detail_comment" />
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
             android:layout_below="@+id/winner_detail_comment"
             android:id="@+id/winner_detail_image1"
             android:scaleType="centerCrop"
@@ -145,8 +146,8 @@
             android:layout_alignEnd="@+id/textView4"
             android:layout_marginTop="15dp" />
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
             android:id="@+id/winner_detail_image2"
             android:scaleType="centerCrop"
             android:layout_alignTop="@+id/winner_detail_image1"
@@ -154,8 +155,8 @@
             android:layout_toEndOf="@+id/winner_detail_image1"
             android:layout_marginLeft="20dp"/>
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
             android:id="@+id/winner_detail_image3"
             android:scaleType="centerCrop"
             android:layout_alignTop="@+id/winner_detail_image2"
