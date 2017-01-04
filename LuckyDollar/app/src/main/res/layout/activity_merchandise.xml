@@ -5,63 +5,94 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.jf.luckydollar.MerchandiseActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white">
     <android.support.v4.view.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="wrap_content"
-        android:layout_height="300dp"
+        android:layout_height="250dp"
         android:layout_gravity="center"/>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="35dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:gravity="center">
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/text6"
+            android:textColor="@color/black"
             android:gravity="center"
-            android:text="[306期]真皮手提包支持验货!"/>
+            android:layout_weight="1.0"
+            android:text="【Vol.306】 Fashion Women Handbag Shoulder Bag Leather Messenger Bag Satchel"/>
+        <Button
+            android:layout_width="35dp"
+            android:layout_height="17dp"
+            android:text="Live"
+            android:textColor="@color/colorPrimary"
+            android:background="@drawable/button_border"
+            android:layout_gravity="right"
+            />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimary"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/openin"
-            android:text="Open in:    "
-            android:textColor="@color/red"
-            android:layout_weight="1.0"
-            android:gravity="center"/>
+            android:text="Next in:    "
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/red"
-            android:text="4:3:55"
-            android:layout_weight="1.0"
+            android:textColor="@color/white"
+            android:text="04:03:55"
+            android:textSize="30sp"
+            android:layout_gravity="center_vertical"
             />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_gravity="center"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
-        >
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/kindgray"
+        android:gravity="center">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="本次参与5人次 点击查看"
-            android:background="#c0c0c0"
+            android:gravity="center"
+            android:text="You did not participate in the indiana"
+            android:textColor="@color/silvertext"
             />
     </LinearLayout>
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/lightgray">
+    </LinearLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="20dp"
         >
         <TextView
             android:layout_width="wrap_content"
@@ -82,7 +113,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="20dp"
         >
         <TextView
             android:layout_width="wrap_content"
@@ -102,7 +133,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="20dp"
         >
         <TextView
             android:layout_width="wrap_content"
@@ -141,8 +172,7 @@
         <ListView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"></ListView>
-
     </LinearLayout>
-
-
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

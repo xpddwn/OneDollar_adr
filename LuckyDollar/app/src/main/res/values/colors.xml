@@ -19,6 +19,9 @@
     <color name="divider">#ffd2d2d2</color>
     <color name="textcolor">#108ae6</color>
     <color name="lightdark">#373739</color>
+    <color name="silvertext">#c1c1c1</color>
+    <color name="kindgray">#e5e5e5</color>
+    <color name="upcomingitem">#f7eed2</color>
 
     <color name="ivory">#fffff0</color> <!-- 象牙色 -->
     <color name="lightyellow">#ffffe0</color> <!-- 亮黄色 -->
