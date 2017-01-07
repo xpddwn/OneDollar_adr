@@ -1,13 +1,17 @@
 package com.jf.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.jf.luckydollar.DepositActivity;
+import com.jf.luckydollar.MerchandiseActivity;
 import com.jf.luckydollar.R;
 
 /**
@@ -29,7 +33,8 @@ public class MeFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
-
+    private View view;
+    private TextView deposit;
     public MeFragment() {
         // Required empty public constructor
     }
@@ -65,7 +70,17 @@ public class MeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_me, container, false);
+        view= inflater.inflate(R.layout.fragment_me, container, false);
+        deposit=(TextView)view.findViewById(R.id.deposit);
+        deposit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), DepositActivity.class);
+                startActivity(intent);
+            }
+        });
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

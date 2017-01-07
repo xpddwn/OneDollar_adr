@@ -23,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jf.luckydollar.MainActivity;
+import com.jf.luckydollar.MerchandiseActivity;
 import com.jf.luckydollar.MyApplication;
 import com.jf.luckydollar.PaymentActivity;
 import com.jf.luckydollar.R;
@@ -96,11 +97,9 @@ public class CartFragment extends Fragment {
         handler = new Handler(){
             public void handleMessage(Message msg){
                 if(msg.what==GOODS_DATAIL){
-//                    Intent intent = new Intent();
-//                    intent.setClass(getActivity(), Winner_detail.class);
-//                    startActivity(intent);
-
-                    Toast.makeText(getActivity(), "跳转商品详情", Toast.LENGTH_SHORT).show();
+                   Intent intent = new Intent();
+                    intent.setClass(getActivity(), MerchandiseActivity.class);
+                    startActivity(intent);
                 }
 
             }
