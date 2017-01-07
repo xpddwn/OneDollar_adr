@@ -39,18 +39,46 @@ public class MerchandiseActivity extends AppCompatActivity {
                 myhandler.sendMessage(msg);
             }
         });
+        previous.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Message msg = new Message();
+                msg.what = 2;
+                myhandler.sendMessage(msg);
+            }
+        });
+        reviews.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Message msg = new Message();
+                msg.what = 3;
+                myhandler.sendMessage(msg);
+            }
+        });
         myhandler=new Handler(){
             public void handleMessage(Message msg) {
                 if (msg.what == 1) {
                     Intent intent = new Intent();
                     ArrayList<String> infolist = new ArrayList<String>();
-//                    infolist.add(userid);
-//                    infolist.add(data.get(position).get("activity_id"));
-                    //设置Intent的class属性，跳转到SecondActivity
                     intent.setClass(MerchandiseActivity.this,SpecificsActivity.class );
                     intent.putStringArrayListExtra("infolist", infolist);
                     startActivity(intent);
-
+                }
+                else if(msg.what==2)
+                {
+                    Intent intent = new Intent();
+                    ArrayList<String> infolist = new ArrayList<String>();
+                    intent.setClass(MerchandiseActivity.this,PreviousActivity.class );
+                    intent.putStringArrayListExtra("infolist", infolist);
+                    startActivity(intent);
+                }
+                else if(msg.what==3)
+                {
+                    Intent intent = new Intent();
+                    ArrayList<String> infolist = new ArrayList<String>();
+                    intent.setClass(MerchandiseActivity.this,ReviewsActivity.class );
+                    intent.putStringArrayListExtra("infolist", infolist);
+                    startActivity(intent);
                 }
             }
         };
