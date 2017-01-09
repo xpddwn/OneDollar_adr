@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import com.jf.luckydollar.DepositActivity;
 import com.jf.luckydollar.MerchandiseActivity;
+import com.jf.luckydollar.MyaccountActivity;
+import com.jf.luckydollar.PaymentActivity;
 import com.jf.luckydollar.R;
 
 /**
@@ -34,7 +36,7 @@ public class MeFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
     private View view;
-    private TextView deposit;
+    private TextView deposit,payment,myaccount;
     public MeFragment() {
         // Required empty public constructor
     }
@@ -72,11 +74,29 @@ public class MeFragment extends Fragment {
         // Inflate the layout for this fragment
         view= inflater.inflate(R.layout.fragment_me, container, false);
         deposit=(TextView)view.findViewById(R.id.deposit);
+        payment=(TextView)view.findViewById(R.id.payment);
+        myaccount=(TextView)view.findViewById(R.id.account);
         deposit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
                 intent.setClass(getActivity(), DepositActivity.class);
+                startActivity(intent);
+            }
+        });
+        payment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), PaymentActivity.class);
+                startActivity(intent);
+            }
+        });
+        myaccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), MyaccountActivity.class);
                 startActivity(intent);
             }
         });

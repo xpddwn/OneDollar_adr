@@ -51,7 +51,8 @@
         <activity android:name=".PayFailActivity" />
         <activity android:name=".ReviewsActivity" />
         <activity android:name=".PreviousActivity" />
-        <activity android:name=".DepositActivity"></activity>
+        <activity android:name=".DepositActivity" />
+        <activity android:name=".MyaccountActivity"></activity>
     </application>
 
 </manifest>
