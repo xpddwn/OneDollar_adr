@@ -27,7 +27,7 @@
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:id="@+id/aboutus"/>
+            android:id="@+id/q1"/>
     </RelativeLayout>
     <TextView
         android:layout_width="match_parent"
@@ -35,7 +35,9 @@
         android:lineSpacingExtra="13dp"
         android:text="@string/answer1"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"/>
+        android:layout_marginRight="10dp"
+        android:visibility="gone"
+        android:id="@+id/a1"/>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -57,8 +59,17 @@
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:id="@+id/liability"/>
+            android:id="@+id/q2"/>
     </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="13dp"
+        android:text="@string/answer1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:visibility="gone"
+        android:id="@+id/a2"/>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -80,8 +91,17 @@
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:id="@+id/protection"/>
+            android:id="@+id/q3"/>
     </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="13dp"
+        android:text="@string/answer1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:visibility="gone"
+        android:id="@+id/a3"/>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -103,6 +123,15 @@
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:id="@+id/agreement"/>
+            android:id="@+id/q4"/>
     </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="13dp"
+        android:text="@string/answer1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:visibility="gone"
+        android:id="@+id/a4"/>
 </LinearLayout>

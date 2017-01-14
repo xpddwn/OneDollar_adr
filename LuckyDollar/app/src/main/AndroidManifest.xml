@@ -55,7 +55,8 @@
         <activity android:name=".MyaccountActivity" />
         <activity android:name=".SettingActivity" />
         <activity android:name=".ClauseActivity" />
-        <activity android:name=".QAActivity"></activity>
+        <activity android:name=".QAActivity" />
+        <activity android:name=".IdentityActivity"></activity>
     </application>
 
 </manifest>

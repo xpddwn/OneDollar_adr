@@ -19,6 +19,7 @@
             android:layout_gravity="center"
             android:text="用户"
             android:textColor="#000000"
+            android:id="@+id/identity"
             android:background="@drawable/bg_special_disease_circle" />
         <TextView
             android:layout_width="match_parent"

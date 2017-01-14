@@ -8,9 +8,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.jf.luckydollar.DepositActivity;
+import com.jf.luckydollar.IdentityActivity;
 import com.jf.luckydollar.MerchandiseActivity;
 import com.jf.luckydollar.MyaccountActivity;
 import com.jf.luckydollar.PaymentActivity;
@@ -39,6 +41,7 @@ public class MeFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
     private View view;
     private TextView deposit,payment,myaccount,setting,qa;
+    private Button identity;
     public MeFragment() {
         // Required empty public constructor
     }
@@ -80,6 +83,7 @@ public class MeFragment extends Fragment {
         myaccount=(TextView)view.findViewById(R.id.account);
         setting=(TextView)view.findViewById(R.id.settings);
         qa=(TextView)view.findViewById(R.id.qa);
+        identity=(Button)view.findViewById(R.id.identity);
         deposit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -117,6 +121,14 @@ public class MeFragment extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent();
                 intent.setClass(getActivity(), QAActivity.class);
+                startActivity(intent);
+            }
+        });
+        identity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), IdentityActivity.class);
                 startActivity(intent);
             }
         });
