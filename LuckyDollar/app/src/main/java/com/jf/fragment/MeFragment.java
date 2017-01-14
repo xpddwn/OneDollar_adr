@@ -14,7 +14,9 @@ import com.jf.luckydollar.DepositActivity;
 import com.jf.luckydollar.MerchandiseActivity;
 import com.jf.luckydollar.MyaccountActivity;
 import com.jf.luckydollar.PaymentActivity;
+import com.jf.luckydollar.QAActivity;
 import com.jf.luckydollar.R;
+import com.jf.luckydollar.SettingActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -36,7 +38,7 @@ public class MeFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
     private View view;
-    private TextView deposit,payment,myaccount;
+    private TextView deposit,payment,myaccount,setting,qa;
     public MeFragment() {
         // Required empty public constructor
     }
@@ -76,6 +78,8 @@ public class MeFragment extends Fragment {
         deposit=(TextView)view.findViewById(R.id.deposit);
         payment=(TextView)view.findViewById(R.id.payment);
         myaccount=(TextView)view.findViewById(R.id.account);
+        setting=(TextView)view.findViewById(R.id.settings);
+        qa=(TextView)view.findViewById(R.id.qa);
         deposit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -97,6 +101,22 @@ public class MeFragment extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent();
                 intent.setClass(getActivity(), MyaccountActivity.class);
+                startActivity(intent);
+            }
+        });
+        setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), SettingActivity.class);
+                startActivity(intent);
+            }
+        });
+        qa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), QAActivity.class);
                 startActivity(intent);
             }
         });

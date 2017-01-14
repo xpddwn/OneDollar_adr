@@ -52,7 +52,10 @@
         <activity android:name=".ReviewsActivity" />
         <activity android:name=".PreviousActivity" />
         <activity android:name=".DepositActivity" />
-        <activity android:name=".MyaccountActivity"></activity>
+        <activity android:name=".MyaccountActivity" />
+        <activity android:name=".SettingActivity" />
+        <activity android:name=".ClauseActivity" />
+        <activity android:name=".QAActivity"></activity>
     </application>
 
 </manifest>
