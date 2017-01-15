@@ -22,6 +22,8 @@
     <color name="silvertext">#c1c1c1</color>
     <color name="kindgray">#e5e5e5</color>
     <color name="upcomingitem">#f7eed2</color>
+    <color name="darkwhite">#fafafa</color>
+    <color name="darkyellow">#fdc929</color>
 
     <color name="ivory">#fffff0</color> <!-- 象牙色 -->
     <color name="lightyellow">#ffffe0</color> <!-- 亮黄色 -->

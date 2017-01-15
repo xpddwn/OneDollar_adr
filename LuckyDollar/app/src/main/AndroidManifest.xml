@@ -56,7 +56,9 @@
         <activity android:name=".SettingActivity" />
         <activity android:name=".ClauseActivity" />
         <activity android:name=".QAActivity" />
-        <activity android:name=".IdentityActivity"></activity>
+        <activity android:name=".IdentityActivity" />
+        <activity android:name=".ModifyActivity" />
+        <activity android:name=".PayRecordActivity"></activity>
     </application>
 
 </manifest>

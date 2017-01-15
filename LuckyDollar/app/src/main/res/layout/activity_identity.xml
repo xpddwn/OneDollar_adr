@@ -47,6 +47,7 @@
             android:text="15600356668"
             android:layout_marginRight="10dp"
             android:layout_toLeftOf="@+id/identity_phone"
+            android:id="@+id/identity_phonetext"
             android:layout_centerVertical="true"/>
         <ImageView
             android:layout_width="wrap_content"

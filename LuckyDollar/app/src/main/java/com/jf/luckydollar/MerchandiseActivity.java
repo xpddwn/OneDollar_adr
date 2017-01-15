@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -24,13 +26,77 @@ public class MerchandiseActivity extends AppCompatActivity {
     private Handler myhandler;
     private ViewPager viewPager;
     private ImageView specifics,previous,reviews;
+    private RelativeLayout bottom1;
+    private LinearLayout bottom2,countdown,progressbar,currentrecord,open;
+    private int mode;//商品状态,1未参与揭晓中,2未参与未开奖,3未参与已揭晓,4已参与揭晓中,5已参与未开奖,6已参与已揭晓
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_merchandise);
+        mode=3;//预设mode为1
         specifics=(ImageView)findViewById(R.id.specifics);
         previous=(ImageView)findViewById(R.id.previous);
         reviews=(ImageView)findViewById(R.id.reviews);
+        bottom1=(RelativeLayout)findViewById(R.id.merchandise_undo);
+        bottom2=(LinearLayout)findViewById(R.id.merchandise_close);
+        countdown=(LinearLayout)findViewById(R.id.countdown);
+        progressbar=(LinearLayout)findViewById(R.id.progressbar);
+        currentrecord=(LinearLayout)findViewById(R.id.currentrecord);
+        open=(LinearLayout)findViewById(R.id.open);
+        if(mode==1)
+        {
+            bottom1.setVisibility(View.VISIBLE);
+            bottom2.setVisibility(View.GONE);
+            countdown.setVisibility(View.VISIBLE);
+            progressbar.setVisibility(View.GONE);
+            currentrecord.setVisibility(View.GONE);
+            open.setVisibility(View.GONE);
+        }
+        else if(mode==2)
+        {
+            bottom1.setVisibility(View.GONE);
+            bottom2.setVisibility(View.VISIBLE);
+            countdown.setVisibility(View.GONE);
+            progressbar.setVisibility(View.VISIBLE);
+            currentrecord.setVisibility(View.VISIBLE);
+            open.setVisibility(View.GONE);
+        }
+        else if(mode==3)
+        {
+            bottom1.setVisibility(View.VISIBLE);
+            bottom2.setVisibility(View.GONE);
+            countdown.setVisibility(View.GONE);
+            progressbar.setVisibility(View.GONE);
+            currentrecord.setVisibility(View.GONE);
+            open.setVisibility(View.VISIBLE);
+        }
+        else if(mode==4)
+        {
+            bottom1.setVisibility(View.GONE);
+            bottom2.setVisibility(View.GONE);
+            countdown.setVisibility(View.VISIBLE);
+            progressbar.setVisibility(View.GONE);
+            currentrecord.setVisibility(View.GONE);
+            open.setVisibility(View.GONE);
+        }
+        else if(mode==5)
+        {
+            bottom1.setVisibility(View.GONE);
+            bottom2.setVisibility(View.VISIBLE);
+            countdown.setVisibility(View.GONE);
+            progressbar.setVisibility(View.VISIBLE);
+            currentrecord.setVisibility(View.VISIBLE);
+            open.setVisibility(View.GONE);
+        }
+        else
+        {
+            bottom1.setVisibility(View.GONE);
+            bottom2.setVisibility(View.GONE);
+            countdown.setVisibility(View.GONE);
+            progressbar.setVisibility(View.GONE);
+            currentrecord.setVisibility(View.GONE);
+            open.setVisibility(View.VISIBLE);
+        }
         specifics.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
