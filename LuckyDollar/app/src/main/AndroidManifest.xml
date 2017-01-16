@@ -46,7 +46,8 @@
         <activity android:name=".MerchandiseActivity" />
         <activity android:name=".PaymentActivity" />
         <activity android:name=".PaySuccessActivity" />
-        <activity android:name=".PayFailActivity"></activity>
+        <activity android:name=".PayFailActivity" />
+        <activity android:name=".MyrewardActivity"></activity>
     </application>
 
 </manifest>
