@@ -58,6 +58,7 @@
         <activity android:name=".QAActivity" />
         <activity android:name=".IdentityActivity" />
         <activity android:name=".ModifyActivity" />
+        <activity android:name=".MyrewardActivity" />
         <activity android:name=".PayRecordActivity"></activity>
     </application>
 
