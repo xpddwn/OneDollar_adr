@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <shape
 
-    <item>
-        <shape android:shape="oval" >
-            <corners android:radius="90dip"/>
-            <solid android:color="@color/white" />
-            <size android:width="170dp" android:height="170dp"/>
-        </shape>
-    </item>
+        xmlns:android="http://schemas.android.com/apk/res/android"
 
-    <item android:bottom="8dp" android:right="8dp" android:top="8dp" android:left="8dp" >
-        <selector xmlns:android="http://schemas.android.com/apk/res/android">
-            <item android:state_pressed="true">
-                <shape android:shape="oval" >
-                    <corners android:radius="90dip"/>
-                    <solid android:color="#003399" />
-                    <size android:width="162dp" android:height="162dp"/>
-                </shape>
-            </item>
+        android:shape="oval">
 
-            <item>
-                <shape android:shape="oval" >
-                    <corners android:radius="90dip"/>
-                    <solid android:color="#003399" />
-                    <size android:width="162dp" android:height="162dp"/>
-                </shape>
-            </item>
+        <!-- 填充的颜色 -->
 
-        </selector>
-    </item>
+        <solid android:color="@color/colorPrimary"/>
+        <stroke android:width="3dip" android:color="@color/lightgray" />
+        <!-- 设置按钮的四个角为弧形 -->
 
-</layer-list>
+        <!-- android:radius 弧形的半径 -->
+
+        <corners android:radius="360dip"/>
+
+
+        <!-- padding: Button 里面的文字与Button边界的间隔 -->
+
+        <padding
+
+            android:left="10dp"
+
+            android:top="10dp"
+
+            android:right="10dp"
+
+            android:bottom="10dp"
+
+            />
+
+    </shape>

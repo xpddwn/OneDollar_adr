@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:id="@+id/whole_item_myrewards">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:id="@+id/myrewadrs_image"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Apple watch 1st gen Sport MLC62JA ROSE"
+            android:textSize="10sp"
+            android:textColor="@color/black"
+            android:layout_alignTop="@+id/myrewadrs_image"
+            android:layout_toRightOf="@+id/myrewadrs_image"
+            android:layout_toEndOf="@+id/myrewadrs_image"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:id="@+id/myrewadrs_goods_name" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You bought 1 entries"
+            android:textColor="@color/gray"
+            android:textSize="10sp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/myrewadrs_goods_name"
+            android:layout_alignLeft="@+id/myrewadrs_goods_name"
+            android:layout_alignStart="@+id/myrewadrs_goods_name"
+            android:id="@+id/myrewadrs_goods_num" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My numbers"
+            android:textSize="10sp"
+            android:textColor="@color/blue"
+            android:layout_alignTop="@+id/myrewadrs_goods_num"
+            android:layout_toRightOf="@+id/myrewadrs_goods_num"
+            android:layout_toEndOf="@+id/myrewadrs_goods_num"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp" />
+        <Button
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:text="Share this fantasy"
+            android:textSize="10sp"
+            android:textAlignment="gravity"
+            android:textColor="@color/button_color"
+            android:background="@drawable/btn_shape2"
+            android:layout_below="@+id/myrewadrs_goods_num"
+            android:layout_alignLeft="@+id/myrewadrs_goods_num"
+            android:layout_alignStart="@+id/myrewadrs_goods_num"
+            android:layout_marginTop="10dp"
+            android:id="@+id/myrewadrs_goods_share_bt"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status:"
+            android:textColor="@color/gray"
+            android:textSize="10sp"
+            android:id="@+id/myrewadrs_status"
+            android:layout_below="@+id/myrewadrs_goods_share_bt"
+            android:layout_alignLeft="@+id/myrewadrs_goods_share_bt"
+            android:layout_alignStart="@+id/myrewadrs_goods_share_bt"
+            android:layout_marginTop="15dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Delivered"
+            android:textSize="10sp"
+            android:layout_alignTop="@+id/myrewadrs_status"
+            android:layout_toRightOf="@+id/myrewadrs_status"
+            android:layout_toEndOf="@+id/myrewadrs_status"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:id="@+id/myrewadrs_status_detail"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Company:"
+            android:textSize="10sp"
+            android:textColor="@color/gray"
+            android:layout_below="@+id/myrewadrs_status"
+            android:layout_alignLeft="@+id/myrewadrs_status"
+            android:layout_alignStart="@+id/myrewadrs_status"
+            android:layout_marginTop="10dp"
+            android:id="@+id/myrewadrs_company"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="xxx"
+            android:textSize="10sp"
+            android:textColor="@color/black"
+            android:layout_alignBaseline="@+id/myrewadrs_company"
+            android:layout_alignBottom="@+id/myrewadrs_company"
+            android:layout_toRightOf="@+id/myrewadrs_company"
+            android:layout_toEndOf="@+id/myrewadrs_company"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:id="@+id/myrewadrs_company_datail"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order num:"
+            android:id="@+id/myrewadrs_ordernum"
+            android:textSize="10sp"
+            android:textColor="@color/gray"
+            android:layout_below="@+id/myrewadrs_company"
+            android:layout_alignLeft="@+id/myrewadrs_company"
+            android:layout_alignStart="@+id/myrewadrs_company"
+            android:layout_marginTop="10dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="xxxxxxxxxx"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:id="@+id/myrewadrs_ordernum_detail"
+            android:layout_alignTop="@+id/myrewadrs_ordernum"
+            android:layout_toRightOf="@+id/myrewadrs_ordernum"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lucky num:"
+            android:textSize="10sp"
+            android:textColor="@color/gray"
+            android:id="@+id/myrewadrs_luckynum"
+            android:layout_below="@+id/myrewadrs_ordernum"
+            android:layout_alignLeft="@+id/myrewadrs_ordernum"
+            android:layout_alignStart="@+id/myrewadrs_ordernum"
+            android:layout_marginTop="10dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="123123123"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:id="@+id/myrewadrs_luckynum_detail"
+            android:layout_alignTop="@+id/myrewadrs_luckynum"
+            android:layout_toRightOf="@+id/myrewadrs_luckynum"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total:"
+            android:textSize="10sp"
+            android:textColor="@color/gray"
+            android:layout_below="@+id/myrewadrs_luckynum"
+            android:layout_alignLeft="@+id/myrewadrs_luckynum"
+            android:layout_alignStart="@+id/myrewadrs_luckynum"
+            android:layout_marginTop="10dp"
+            android:id="@+id/myrewadrs_total"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:text="123123 joined"
+            android:textColor="@color/black"
+            android:id="@+id/myrewadrs_total_detail"
+            android:layout_alignTop="@+id/myrewadrs_total"
+            android:layout_toRightOf="@+id/myrewadrs_total"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bought:"
+            android:textColor="@color/gray"
+            android:textSize="10sp"
+            android:layout_below="@+id/myrewadrs_total"
+            android:layout_alignLeft="@+id/myrewadrs_total"
+            android:layout_alignStart="@+id/myrewadrs_total"
+            android:layout_marginTop="10dp"
+            android:id="@+id/myrewadrs_bought"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:textColor="@color/black"
+            android:text="12 numbers"
+            android:id="@+id/myrewadrs_bought_datail"
+            android:layout_alignBaseline="@+id/myrewadrs_bought"
+            android:layout_alignBottom="@+id/myrewadrs_bought"
+            android:layout_toRightOf="@+id/myrewadrs_bought"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time:"
+            android:id="@+id/myrewadrs_time"
+            android:textSize="10sp"
+            android:textColor="@color/gray"
+            android:layout_below="@+id/myrewadrs_bought"
+            android:layout_alignLeft="@+id/myrewadrs_bought"
+            android:layout_alignStart="@+id/myrewadrs_bought"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2017-01-15 10:10:00"
+            android:textSize="10sp"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@+id/myrewadrs_time"
+            android:layout_alignTop="@+id/myrewadrs_time"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:id="@+id/myrewadrs_time_detail"
+            />
+
+
+
+    </RelativeLayout>
+</RelativeLayout>
