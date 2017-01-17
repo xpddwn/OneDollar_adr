@@ -8,10 +8,18 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
-import com.jf.luckydollar.MyrewardActivity;
+import com.jf.luckydollar.DepositActivity;
+import com.jf.luckydollar.IdentityActivity;
+import com.jf.luckydollar.MerchandiseActivity;
+import com.jf.luckydollar.MyaccountActivity;
+import com.jf.luckydollar.PaymentActivity;
+import com.jf.luckydollar.QAActivity;
 import com.jf.luckydollar.R;
+import com.jf.luckydollar.SettingActivity;
+import com.jf.luckydollar.MyrewardActivity;
 import com.jf.luckydollar.Winner_detail;
 
 /**
@@ -33,7 +41,9 @@ public class MeFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
-
+    private View view;
+    private TextView deposit,payment,myaccount,setting,qa;
+    private Button identity;
     public MeFragment() {
         // Required empty public constructor
     }
@@ -84,6 +94,60 @@ public class MeFragment extends Fragment {
 
                 //设置Intent的class属性，跳转到SecondActivity
                 intent.setClass(getActivity(), MyrewardActivity.class);
+                startActivity(intent);
+            }
+        });
+       deposit=(TextView)view.findViewById(R.id.deposit);
+        payment=(TextView)view.findViewById(R.id.payment);
+        myaccount=(TextView)view.findViewById(R.id.account);
+        setting=(TextView)view.findViewById(R.id.settings);
+        qa=(TextView)view.findViewById(R.id.qa);
+        identity=(Button)view.findViewById(R.id.identity);
+        deposit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), DepositActivity.class);
+                startActivity(intent);
+            }
+        });
+        payment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), PaymentActivity.class);
+                startActivity(intent);
+            }
+        });
+        myaccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), MyaccountActivity.class);
+                startActivity(intent);
+            }
+        });
+        setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), SettingActivity.class);
+                startActivity(intent);
+            }
+        });
+        qa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), QAActivity.class);
+                startActivity(intent);
+            }
+        });
+        identity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), IdentityActivity.class);
                 startActivity(intent);
             }
         });
