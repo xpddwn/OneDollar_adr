@@ -162,12 +162,11 @@
     <color name="darkcyan">#008b8b</color> <!-- 暗青色 -->
     <color name="teal">#008080</color> <!-- 水鸭色 -->
     <color name="darkgreen">#006400</color> <!-- 暗绿色 -->
-    <color name="blue">#0000ff</color> <!-- 蓝色 -->
+     <color name="blue">#108ae9</color><!--蓝色 -->
     <color name="mediumblue">#0000cd</color> <!-- 中兰色 -->
     <color name="darkblue">#00008b</color> <!-- 暗蓝色 -->
     <color name="navy">#000080</color> <!-- 海军色 -->
     <color name="background">#eeeeee</color><!--背景色 -->
     <color name="green">#44c662</color>
-
 
 </resources>
