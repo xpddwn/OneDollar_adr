@@ -44,9 +44,21 @@
         </activity>
         <activity android:name=".Winner_detail" />
         <activity android:name=".MerchandiseActivity" />
+        <activity android:name=".WinnersActivity" />
+        <activity android:name=".SpecificsActivity" />
         <activity android:name=".PaymentActivity" />
         <activity android:name=".PaySuccessActivity" />
-        <activity android:name=".PayFailActivity"></activity>
+        <activity android:name=".PayFailActivity" />
+        <activity android:name=".ReviewsActivity" />
+        <activity android:name=".PreviousActivity" />
+        <activity android:name=".DepositActivity" />
+        <activity android:name=".MyaccountActivity" />
+        <activity android:name=".SettingActivity" />
+        <activity android:name=".ClauseActivity" />
+        <activity android:name=".QAActivity" />
+        <activity android:name=".IdentityActivity" />
+        <activity android:name=".ModifyActivity" />
+        <activity android:name=".PayRecordActivity"></activity>
     </application>
 
 </manifest>

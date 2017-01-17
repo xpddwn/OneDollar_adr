@@ -6,29 +6,58 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="185dp"
         android:orientation="vertical"
         android:layout_span="3"
-        android:background="@drawable/textview_border"
+        android:background="@color/lightdark"
         android:layout_weight="2.0"
+        android:paddingTop="50dp"
         >
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:layout_gravity="center"
             android:text="用户"
             android:textColor="#000000"
+            android:id="@+id/identity"
             android:background="@drawable/bg_special_disease_circle" />
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Login"
+            android:layout_height="wrap_content"
+            android:text="Shuai Yuan"
             android:gravity="center"
-            android:id="@+id/login"/>
+            android:id="@+id/name"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Banlance "
+                android:textColor="@color/white"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100$"
+                android:textColor="@color/colorPrimary"/>
+            <Button
+                android:layout_width="64dp"
+                android:layout_height="30dp"
+                android:text="Deposit"
+                android:textColor="@color/colorPrimary"
+                android:background="@drawable/button_border"
+                android:layout_marginLeft="10dp"/>
+        </LinearLayout>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200px"
+        android:layout_height="100dp"
         android:orientation="horizontal"
         android:layout_weight="1.0"
         >
@@ -56,38 +85,19 @@
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
-            android:text="My Winner Stories"
-            android:layout_weight="1.0"
-            android:id="@+id/myStory"
             android:gravity="center"
-            android:background="@drawable/textview_border">
-        </TextView>
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="My Account"
+            android:text="Address"
             android:layout_weight="1.0"
-            android:id="@+id/myAccount"
+            android:id="@+id/address"
             android:background="@drawable/textview_border">
         </TextView>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200px"
+        android:layout_height="100dp"
         android:orientation="horizontal"
         android:layout_weight="1.0"
         >
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="match_parent"
-            android:text="Address"
-            android:layout_weight="1.0"
-            android:id="@+id/address"
-            android:gravity="center"
-            android:background="@drawable/textview_border">
-        </TextView>
-
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
@@ -97,6 +107,7 @@
             android:gravity="center"
             android:background="@drawable/textview_border">
         </TextView>
+
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
@@ -109,16 +120,54 @@
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
+            android:text="My Account"
+            android:layout_weight="1.0"
+            android:id="@+id/account"
+            android:gravity="center"
+            android:background="@drawable/textview_border">
+        </TextView>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:layout_weight="1.0"
+        >
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:text="My Winner Stories"
+            android:layout_weight="1.0"
+            android:id="@+id/story"
+            android:gravity="center"
+            android:background="@drawable/textview_border">
+        </TextView>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
             android:text="APP Settings"
             android:layout_weight="1.0"
             android:id="@+id/settings"
             android:gravity="center"
             android:background="@drawable/textview_border">
         </TextView>
+
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:text="Online Customer Serrvice"
+            android:layout_weight="1.0"
+            android:id="@+id/service"
+            android:gravity="center"
+            android:background="@drawable/textview_border">
+        </TextView>
+
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200px"
+        android:layout_height="100dp"
         android:orientation="horizontal"
         android:layout_weight="1.0"
         >
@@ -131,20 +180,9 @@
             android:gravity="center"
             android:background="@drawable/textview_border">
         </TextView>
-
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
-            android:text="Online Customer Serrvice"
-            android:layout_weight="1.0"
-            android:id="@+id/service"
-            android:gravity="center"
-            android:background="@drawable/textview_border">
-        </TextView>
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="match_parent"
-            android:text="在线客服"
             android:layout_weight="1.0"
             android:gravity="center"
             android:background="@drawable/textview_border">
@@ -157,4 +195,5 @@
             android:background="@drawable/textview_border">
         </TextView>
     </LinearLayout>
+
 </LinearLayout>

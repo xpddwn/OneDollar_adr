@@ -1,55 +1,166 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#ffffff">
-    <!-- TODO: Update blank fragment layout -->
-    <LinearLayout
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:id="@+id/toplinear">
-        <ImageView
-            android:src="@drawable/example"
-            android:layout_width="match_parent"
-            android:layout_height="300px"
-            android:scaleType="fitCenter"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="$54,600 items have been issued"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <ListView
-            android:id="@+id/recentWinners"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:fastScrollEnabled="true"
-            android:layout_alignParentLeft="true" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white">
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Upcoming"
-                android:layout_weight="1.0"/>
-            <TextView
-                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/toplinear">
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/mainviewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:layout_gravity="center"
+                    android:scaleType="fitCenter"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:src="@drawable/volume" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/messagetext1"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="@color/textcolor"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/arrow"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:id="@+id/arrow1"/>
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/lightgray">
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="+ MORE"/>
-        </LinearLayout>
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Newest"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1.0"
+                        android:textSize="20sp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+ MORE"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="20sp"
+                        android:textColor="@color/textcolor"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1.0"
+                            android:layout_marginLeft="10dp">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="115dp"
+                                android:src="@drawable/example"
+                                android:layout_weight="1.0"
+                                android:scaleType="fitCenter"
+                                android:padding="10dp"
+                                android:id="@+id/image1"
+                                android:background="@drawable/image_border"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="相机"
+                                android:textSize="15sp"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1.0"
+                        android:layout_marginLeft="10dp">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="115dp"
+                            android:src="@drawable/example"
+                            android:layout_weight="1.0"
+                            android:scaleType="fitCenter"
+                            android:id="@+id/image2"
+                            android:padding="10dp"
+                            android:background="@drawable/image_border"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="相机"
+                            android:textSize="15sp"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1.0"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="115dp"
+                            android:src="@drawable/example"
+                            android:layout_weight="1.0"
+                            android:scaleType="fitCenter"
+                            android:id="@+id/image3"
+                            android:padding="10dp"
+                            android:background="@drawable/image_border"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="相机"
+                            android:textSize="15sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/lightgray">
+                </LinearLayout>
         <LinearLayout
             android:id="@+id/imgContent"
             android:layout_width="fill_parent"
@@ -57,42 +168,36 @@
             android:layout_weight="10"
             android:gravity="center_vertical"
             android:orientation="vertical" >
-
-            <HorizontalScrollView
-                android:layout_width="fill_parent"
-                android:layout_weight="1"
-                android:layout_height="0dip"
-                android:background="#eee" >
-
-                <LinearLayout
-                    android:id="@+id/recentUpcoming"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_gravity="center_vertical"
-                    android:orientation="horizontal" >
-                </LinearLayout>
-            </HorizontalScrollView>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp">
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Popular"
-                android:layout_weight="1.0"/>
+                android:layout_weight="1.0"
+                android:layout_gravity="center_vertical"
+                android:textSize="20sp"/>
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Newest"
-                />
+                android:text="Selected"
+                android:textSize="20sp"
+                android:layout_weight="1.0"
+                android:gravity="center"
+                android:layout_gravity="center_vertical" />
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Remaining"
                 android:layout_weight="1.0"
-                android:gravity="right"/>
+                android:gravity="right"
+                android:textSize="20sp"
+                android:layout_gravity="center_vertical"/>
         </LinearLayout>
         <GridView
             android:layout_width="match_parent"
@@ -100,9 +205,10 @@
             android:id="@+id/fantasygrid"
             android:numColumns="2"
             android:columnWidth="100px"
-            android:stretchMode="columnWidth">
-
+            android:stretchMode="columnWidth"
+            >
         </GridView>
     </LinearLayout>
-
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
